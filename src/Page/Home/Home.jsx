@@ -7,14 +7,24 @@ import UserReviews from "../../Component/UserReviews/UserReviews";
 const Home = () => {
   return (
     <div>
-      <Banner></Banner>
+      <section id="banner">
+        <Banner />
+      </section>
       <div className="px-4 md:px-0">
         {" "}
-        <CoreCommitment></CoreCommitment>
-        <ThreeStep></ThreeStep>
-        <UserReviews></UserReviews>
+        <section id="coreCommitment">
+          <CoreCommitment />
+        </section>
+        <section id="steps">
+          <ThreeStep />
+        </section>
+        <section id="reviews">
+          <UserReviews />
+        </section>
       </div>
-      <FormArea></FormArea>
+      <section id="quote">
+        <FormArea />
+      </section>
     </div>
   );
 };
