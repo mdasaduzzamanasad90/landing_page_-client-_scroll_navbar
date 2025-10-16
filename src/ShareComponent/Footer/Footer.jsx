@@ -17,7 +17,7 @@ const Footer = () => {
             <span className="font-medium text-sm md:text-lg">
               Telegram:
               <a
-                href="https://t.me/XXX"
+                href="https://t.me/GainZen"
                 target="_blank"
                 rel="noreferrer"
                 className="hover:underline ml-2"

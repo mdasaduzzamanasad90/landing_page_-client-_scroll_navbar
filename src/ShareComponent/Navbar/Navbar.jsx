@@ -1,82 +1,71 @@
-import { useState } from "react";
-
+import { NavLink } from "react-router";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("banner"); // default active
-  // Navbar.jsx
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = -90; // Navbar height (px) অনুযায়ী adjust করো
-      const y =
-        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-       setActiveSection(id); 
-    }
-  };
-
-  // Reusable menu links
   const navlink = (
     <>
       <li>
-        <button
-          onClick={() => scrollToSection("banner")}
-          className={`duration-200 ${
-            activeSection === "banner"
-              ? "text-primary font-semibold"
-              : "hover:text-primary"
-          }`}
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `duration-200 ${
+              isActive ? "text-primary font-semibold" : "hover:text-primary"
+            }`
+          }
         >
           Home
-        </button>
+        </NavLink>
       </li>
+
       <li>
-        <button
-          onClick={() => scrollToSection("coreCommitment")}
-          className={`duration-200 ${
-            activeSection === "coreCommitment"
-              ? "text-primary font-semibold"
-              : "hover:text-primary"
-          }`}
+        <NavLink
+          to="/advantages"
+          className={({ isActive }) =>
+            `duration-200 ${
+              isActive ? "text-primary font-semibold" : "hover:text-primary"
+            }`
+          }
         >
           Advantages
-        </button>
+        </NavLink>
       </li>
+
       <li>
-        <button
-          onClick={() => scrollToSection("steps")}
-          className={`duration-200 ${
-            activeSection === "steps"
-              ? "text-primary font-semibold"
-              : "hover:text-primary"
-          }`}
+        <NavLink
+          to="/steps"
+          className={({ isActive }) =>
+            `duration-200 ${
+              isActive ? "text-primary font-semibold" : "hover:text-primary"
+            }`
+          }
         >
           Steps
-        </button>
+        </NavLink>
       </li>
+
       <li>
-        <button
-          onClick={() => scrollToSection("reviews")}
-          className={`duration-200 ${
-            activeSection === "reviews"
-              ? "text-primary font-semibold"
-              : "hover:text-primary"
-          }`}
+        <NavLink
+          to="/reviews"
+          className={({ isActive }) =>
+            `duration-200 ${
+              isActive ? "text-primary font-semibold" : "hover:text-primary"
+            }`
+          }
         >
           Reviews
-        </button>
+        </NavLink>
       </li>
+
       <li>
-        <button
-          onClick={() => scrollToSection("quote")}
-          className={`duration-200 ${
-            activeSection === "quote"
-              ? "text-primary font-semibold"
-              : "hover:text-primary"
-          }`}
+        <NavLink
+          to="/getquote"
+          className={({ isActive }) =>
+            `duration-200 ${
+              isActive ? "text-primary font-semibold" : "hover:text-primary"
+            }`
+          }
         >
           Get Quote
-        </button>
+        </NavLink>
       </li>
     </>
   );
@@ -103,6 +92,7 @@ const Navbar = () => {
               />
             </svg>
           </div>
+
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
